@@ -15,7 +15,6 @@ def index():
 
     today = date.today()
     d2 = today.strftime("%B %d, %Y")
-    # print(d2)
     business_news = get_source('business')
     entertainment_news = get_source('entertainment')
     general_news = get_source('general')
@@ -25,7 +24,7 @@ def index():
 
   
     top_headlines = get_article('top-headlines')
-    title = 'I_news - Your update on the latest news'
+    title = 'Yo_news - Your update on the latest news'
 
     search_article = request.args.get('article_query')
 

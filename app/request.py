@@ -121,7 +121,8 @@ def process_results(article_list):
 
 def search_article(category):
     # search_article_results = []
-    search_article_url = 'https://newsapi.org/v2/sources?category={}&apiKey={}'.format(category,api_key)
+    search_article_url = 'GET https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=API_KEY'
+
     print(search_article_url)
     with urllib.request.urlopen(search_article_url) as url:
         search_article_data = url.read()
