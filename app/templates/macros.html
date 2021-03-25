@@ -1,0 +1,50 @@
+{% macro displayArticle(article_list) %}
+{% for article in article_list %}
+
+<div class="article" style='height:100%;border-right: 1px solid rgb(100, 99, 99)'>
+    <div class="card text-center">
+        <div class="card-body" >
+            <a href="{{article.url}}">
+                <h2 style="color: black;font-family: 'Lora', serif;">{{article.title | truncate (200)}}</h2>
+            </a>
+
+            <img src="{{ article.urlToImage }}" width="800" height="500" alt="{{article.title}}">
+            <!-- <p style="font-size: 19px;padding: 5px 10px;">{{article.content}}</p> -->
+            <p style="font-size: 18px; padding: 5px 10px;">{{article.description}}</p>
+
+            <p style="color: blue; font-size: 20px;"><span
+                    style="color: black;">Author:</span>&nbsp;<strong>{{article.author}}</strong></p>
+            <p><small class="text-muted">Published:&nbsp;{{article.publishedAt}}</small></p>
+        </div>
+
+        <hr>
+    </div>
+</div>
+
+{% endfor%}
+
+{% endmacro %}
+{% macro displaySource(source_list) %}
+{% for source in source_list %}
+<div class="source">
+
+    <div class="row">
+
+        <div class="card"
+            style="width: 30rem; margin-bottom: 20px;margin-left: 10px; border:1px solid rgb(248, 246, 246); background: rgb(241, 239, 239);  box-shadow:inset 0px 11px 8px -10px #CCC,inset 0px -11px 8px -10px #CCC; ">
+            <div class="card-body mine">
+                <h5 class="card-title text-center" style="color: blue;font-family: 'Lora', serif; font-weight: bold;">
+                    {{source.name}}</h5>
+
+                <p class="card-text">{{source.description | truncate(200)}}</p>
+                <a href="{{source.url}}">Read More</a>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+{% endfor %}
+{% endmacro %}

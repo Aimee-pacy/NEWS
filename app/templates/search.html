@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+
+{% block content%}
+<div class="container">
+    <h3 style="color: black;font-family: 'Lora', serif;"> Found {{ articles | count }} matches </h3>
+    <hr>
+    <div class="row">
+        <div class="col-md-3">
+            {{macro.displaySource(articles)}}
+        </div>
+    </div>
+
+</div>
+{% endblock %}
