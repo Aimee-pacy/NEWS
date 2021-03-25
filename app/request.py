@@ -22,8 +22,11 @@ def get_source(category):
     '''
     get_source_url= news_url.format(category,api_key)
 
+
     # print(get_source_url)
     with urllib.request.urlopen(get_source_url) as url:
+        
+        # import pdb; pdb.set_trace()
 
         get_source_data = url.read()
         get_source_response = json.loads(get_source_data)
@@ -121,8 +124,8 @@ def process_results(article_list):
 
 def search_article(category):
     # search_article_results = []
-    search_article_url = 'GET https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=API_KEY'
-
+    import pdb; pdb.set_trace()
+    search_article_url = 'https://newsapi.org/v2/sources?category={}&apiKey={}'.format(category,api_key)
     print(search_article_url)
     with urllib.request.urlopen(search_article_url) as url:
         search_article_data = url.read()
