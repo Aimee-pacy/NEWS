@@ -1,7 +1,6 @@
 from . import main
 from ..request import get_article,get_source,search_article
 from datetime import date
-from flask import FLASK
 from flask import render_template,request,redirect,url_for
 
  
