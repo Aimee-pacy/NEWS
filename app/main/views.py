@@ -13,8 +13,8 @@ def index():
     '''
   
 
-    today = date.today()
-    d2 = today.strftime("%B %d, %Y")
+    # today = date.today()
+    # d2 = today.strftime("%B %d, %Y")
     business_news = get_source('business')
     entertainment_news = get_source('entertainment')
     general_news = get_source('general')
@@ -31,7 +31,8 @@ def index():
     if search_article:
         return redirect(url_for('search',article_name = search_article))
     else:
-        return render_template('index.html',day = d2, title = title, headlines= top_headlines, business = business_news , entertainment = entertainment_news , general = general_news , health = health_news , science = science_news , sports = sports_news)
+        #return render_template('index.html' ,day = d2, title = title, headlines= top_headlines, business = business_news , entertainment = entertainment_news , general = general_news , health = health_news , science = science_news , sports = sports_news)
+        return render_template('index.html' , title = title, headlines= top_headlines, business = business_news , entertainment = entertainment_news , general = general_news , health = health_news , science = science_news , sports = sports_news)
 
 @main.route('/search/<article_name>')
 def search(article_name):
